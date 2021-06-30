@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>汇编语言(王爽)读书笔记——1、2、3章 | YOHOOP</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">汇编语言(王爽)读书笔记——1、2、3章</h1><a id="logo" href="/.">YOHOOP</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">汇编语言(王爽)读书笔记——1、2、3章</h1><div class="post-meta">2021-06-30<span> | </span><span class="category"><a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%8E%8B%E7%88%BD/">汇编语言(王爽)</a></span></div><div class="post-content"><div align="right"><img src="/2021/06/30/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%8E%8B%E7%88%BD-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/headImg.jpg" width="50px" height="50px" align="center"></div>
+
+<h1 id="Assembly"><a href="#Assembly" class="headerlink" title="Assembly"></a>Assembly</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><h3 id="机器语言"><a href="#机器语言" class="headerlink" title="机器语言"></a>机器语言</h3><p>​        二进制数字，转换成高低电平。</p>
+<p>​        CPU执行指令（central processing unit）。</p>
+<p>​        硬件设计、内部结构不同的微处理器，有不同的机器指令集。</p>
+<p>​        晦涩难懂，不易查错。</p>
+<h3 id="汇编语言的产生"><a href="#汇编语言的产生" class="headerlink" title="汇编语言的产生"></a>汇编语言的产生</h3><p>​        为了方便理解记忆。</p>
+<p>​        汇编器，将汇编语言转换成机器语言的程序。</p>
+<h3 id="汇编语言的组成"><a href="#汇编语言的组成" class="headerlink" title="汇编语言的组成"></a>汇编语言的组成</h3><p>​        汇编指令：机器码的助记符。</p>
+<p>​        伪指令：没有对应的机器码，由编译器执行，计算机不执行。</p>
+<p>​        其他符号：如+ - * / 等，由编译器识别，没有对应的机器码。</p>
+<h3 id="存储器——内存"><a href="#存储器——内存" class="headerlink" title="存储器——内存"></a>存储器——内存</h3><p>​        存放指令和数据供CPU读取。</p>
+<p>​        磁盘上的程序、数据需要读取到内存，才能被CPU利用。</p>
+<h3 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h3><p>​        应用上的概念，本身在内存或磁盘中都是二进制信息。</p>
+<p>​        同样的二进制信息，可以把他看称数据，也可以看成指令。</p>
+<h3 id="存储单元"><a href="#存储单元" class="headerlink" title="存储单元"></a>存储单元</h3><p>​        存储器划分为若干存储单元，从0开始编号。</p>
+<p>​        最小的信息单位是bit，一个二进制位。</p>
+<p>​        容量一般以byte来计算，1 byte = 8 bit。</p>
+<p>​        其他计量单位 KB MB GB TB。</p>
+<h3 id="CPU对存储器的读写"><a href="#CPU对存储器的读写" class="headerlink" title="CPU对存储器的读写"></a>CPU对存储器的读写</h3><p>​        CPU与外部器件进行信息交互：地址信息、控制信息、数据信息。</p>
+<p>​        CPU通过总线向其他芯片传输信息。</p>
+<p>​        总线就是导线的集合，逻辑上分为地址总线、控制总线、数据总线。</p>
+<h3 id="地址总线"><a href="#地址总线" class="headerlink" title="地址总线"></a>地址总线</h3><p>​        CPU通过地址总线指定存储单元。</p>
+<p>​        地址总线宽度为N，可寻址的内存单元个数为2^N（0——2^N-1）。</p>
+<h3 id="数据总线"><a href="#数据总线" class="headerlink" title="数据总线"></a>数据总线</h3><p>​        数据总线宽度决定了CPU与外界数据传输的速度。</p>
+<h3 id="控制总线"><a href="#控制总线" class="headerlink" title="控制总线"></a>控制总线</h3><p>​        不同控制线的集合。</p>
+<p>​        控制总线宽度决定了CPU对外控制能力（多少种控制）。</p>
+<h3 id="内存地址空间"><a href="#内存地址空间" class="headerlink" title="内存地址空间"></a>内存地址空间</h3><p>​        CPU地址总线宽度可寻址的内存单元构成CPU的内存地址空间。</p>
+<p>​        各类存储器物理上是独立器件，逻辑上可看作总的一个存储器即内存地址空间。</p>
+<p>​        CPU操作不同地址段实际上就在操作对应的物理存储器。</p>
+<h3 id="主板、接口卡"><a href="#主板、接口卡" class="headerlink" title="主板、接口卡"></a>主板、接口卡</h3><p>​        主板上有PC机核心器件和主要器件，通过总线相连。</p>
+<p>​        CPU、存储器、外围芯片组、扩展插槽（RAM内存条、各类接口卡）。</p>
+<p>​        CPU通过总线控制接口卡，接口卡控制外围设备。</p>
+<h3 id="各类存储器芯片"><a href="#各类存储器芯片" class="headerlink" title="各类存储器芯片"></a>各类存储器芯片</h3><p>​        随机存储器RAM，可读写，需带电存储。存放CPU使用的绝大部分程序和数据。</p>
+<p>​        接口卡上的RAM，对外部设备大批量输入输出数据进行暂时存储。</p>
+<p>​        只读存储器ROM，关机后数据不回丢失。</p>
+<p>​        装有BIOS（basic input/output system）的ROM。BIOS是主板和各类接口卡提供的最基本的输入输出的软件系统。</p>
+<h2 id="2-寄存器"><a href="#2-寄存器" class="headerlink" title="2.寄存器"></a>2.寄存器</h2><p>​        CPU由运算器（信息处理）、控制器（控制各器件工作）、寄存器（信息存储）等器件构成，靠内部总线（数据传输）相连。</p>
+<p>​        内部总线实现CPU内部各器件的联系，外部总线实现CPU和主板上其他器件的联系。</p>
+<p>​        寄存器是CPU中可用指令读写的器件，以实现对CPU的控制。</p>
+<p>​        不同的CPU寄存器的个数、结构不同。</p>
+<p>​        8086CPU有14个寄存器，AX、BX、CX、DX、SI、DI、SP、BP、IP、CS、SS、DS、ES、PSW，都是16位的。</p>
+<h3 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h3><p>​        AX、BX、CX、DX，用来存放一般性的数据。</p>
+<p>​        为兼容上代，这四个寄存器都可分为两个独立的8位寄存器使用。AH、AL、BH、BL……。</p>
+<h3 id="字在寄存器中的存储"><a href="#字在寄存器中的存储" class="headerlink" title="字在寄存器中的存储"></a>字在寄存器中的存储</h3><p>​        8086CPU可一次性处理两种数据：</p>
+<ol>
+<li>字节byte，8位</li>
+<li>字word，两个字节，称为字的高位字节和地位字节</li>
+</ol>
+<h3 id="几条汇编指令"><a href="#几条汇编指令" class="headerlink" title="几条汇编指令"></a>几条汇编指令</h3><p>mov ax,18 —— ax=18</p>
+<p>mov ah,78 —— ah=78</p>
+<p>add ax,8 —— ax=ax+8</p>
+<p>mov ax,bx —— ax=bx</p>
+<p>add ax,bx —— ax=ax+bx</p>
+<p>​        ax和bx值都为8226H，add ax,bx ，ax值是？044CH。最高位溢出，因为寄存器是16位。</p>
+<p>​        ax值为00C5H，add al,93H ,ax值是？0058H。al是8位寄存器，溢出丢失，并没有真的丢弃，去哪了？</p>
+<p>​        此时al是作为一个独立的8位寄存器使用的，跟ah没有关系。</p>
+<p>​        指令的两个操作对象的位数应当是一致的。</p>
+<h3 id="物理地址"><a href="#物理地址" class="headerlink" title="物理地址"></a>物理地址</h3><p>​        所有内存单元构成一个一维的线性存储空间，每个单元对应唯一的地址。</p>
+<p>​        不同的CPU有不同的形成物理地址的方式。</p>
+<h3 id="16位结构的CPU"><a href="#16位结构的CPU" class="headerlink" title="16位结构的CPU"></a>16位结构的CPU</h3><p>​        运算器一次最多处理16位的数据。</p>
+<p>​        寄存器最大宽度位16位。</p>
+<p>​        寄存器和运算器间的通路位16位。</p>
+<h3 id="8086CPU给出物理地址的方法"><a href="#8086CPU给出物理地址的方法" class="headerlink" title="8086CPU给出物理地址的方法"></a>8086CPU给出物理地址的方法</h3><p>​        20位地址总线，可传输20地址，寻址能力1MB。</p>
+<p>​        16位结构，发出16位地址，寻址能力64KB。</p>
+<p>​        采用内部用两个16位地址合成的方法来形成一个20位地址：</p>
+<ol>
+<li>CPU中相关部件提供两个16位地址，称为段地址和偏移地址。</li>
+<li>段地址、偏移地址经内部总线送入地址加法器。</li>
+<li>地址加法器将两个16位地址合成一个20位地址。        物理地址=段地址*16+偏移地址。        123C8H=1230H变12300H，再加00C8H。</li>
+<li>地址加法器通过内部总线将20位地址送入输入输出控制电路。</li>
+<li>输入输出控制电路将地址送上地址总线。</li>
+<li>20位物理地址由地址总线送到存储器。</li>
+</ol>
+<h3 id="段地址-16-偏移地址-物理地址的本质含义"><a href="#段地址-16-偏移地址-物理地址的本质含义" class="headerlink" title="段地址*16+偏移地址=物理地址的本质含义"></a>段地址*16+偏移地址=物理地址的本质含义</h3><p>​        基础地址+偏移地址=物理地址 这种寻址模式的具体实现方案。段地址*16就是基础地址。</p>
+<p>​        因为长度限制：16——20。</p>
+<h3 id="段的概念"><a href="#段的概念" class="headerlink" title="段的概念"></a>段的概念</h3><p>​        内存并没有分段，段的划分来自于CPU。</p>
+<p>​        把若干连续的内存看作一个段，用段地址*16定义起始地址，用偏移地址定位内存单元。</p>
+<p>​        段地址*16，所以一个段的起始地址一定是16的倍数。偏移地址位16位，所以一个段的最大长度为64KB。</p>
+<p>​        可以用不同的段地址和偏移地址形成同一个物理地址。</p>
+<h3 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h3><p>​        段地址在8086CPU的段寄存器中存放。</p>
+<p>​        4个段寄存器：CS、DS、SS、ES。</p>
+<p>​        访问内存时由段寄存器给CPU提供内存单元的段地址。</p>
+<h3 id="CS和IP"><a href="#CS和IP" class="headerlink" title="CS和IP"></a>CS和IP</h3><p>​        这两个寄存器指示了CPU当前要读取指令的地址。</p>
+<p>​        CS为代码段寄存器，IP为指令指针寄存器。</p>
+<p>​        任意时刻，CPU将CS:IP指向的内容当作指令执行（CS值*16+IP值）。</p>
+<p>​        CPU工作过程：</p>
+<ol>
+<li>从CS:IP指向的内存单元读取指令，指令进入指令缓冲器。</li>
+<li>IP=IP+所读取指令的长度，从而指向下一条指令。</li>
+<li>执行指令，并重复这个过程。</li>
+</ol>
+<p>​        8086CPU在加点启动或者复位后，CS=FFFFH，IP=0000H，即启动时执行的第一条指令从FFFF0H内存单元中读取。</p>
+<h3 id="修改CS、IP的指令"><a href="#修改CS、IP的指令" class="headerlink" title="修改CS、IP的指令"></a>修改CS、IP的指令</h3><p>通过改变CS、IP中的内容来控制CPU执行目标指令</p>
+<p>mov 传送指令，可改变大部分寄存器的值，但不能设置CS、IP的值</p>
+<p>可以改变CS、IP值的指令统称为转移指令，比如jmp</p>
+<p>jmp指令</p>
+<p>同时修改CS、IP的内容，jmp 段地址：偏移地址</p>
+<p>jmp 2AE3:3，执行后CS=2AE3，IP=0003</p>
+<p>jmp 3:0B16，执行后，CS=0003，IP=0B16</p>
+<p>仅修改IP的内容，jmp 某一合法寄存器</p>
+<p>jmp ax，相当于mov IP,ax，IP的内容变得跟ax内容一样</p>
+<h3 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h3><p>​        将长度为N(N&lt;=64KB)的一组代码，存在一组地址连续、起始地址为16的倍数的内存单元中，这段内存是用来存放代码的，从而定义了一个代码段。</p>
+<p>​        要让CPU执行放在代码段中的指令，需要将CS:IP指向代码段中的第一条指令的地址。</p>
+<h3 id="实验1-查看CPU和内存，用机器指令和汇编指令编程"><a href="#实验1-查看CPU和内存，用机器指令和汇编指令编程" class="headerlink" title="实验1 查看CPU和内存，用机器指令和汇编指令编程"></a>实验1 查看CPU和内存，用机器指令和汇编指令编程</h3><p>​        win10运行debug：</p>
+<ol>
+<li><p>安装DOSBox，<a target="_blank" rel="noopener" href="https://www.dosbox.com/%EF%BC%8Cdownload%E3%80%81download">https://www.dosbox.com/，download、download</a> now</p>
+</li>
+<li><p>下载debug.exe</p>
+</li>
+<li><p>挂载debug</p>
+</li>
+<li><p>打开DOSBox内DOSBox 0.74-3 Options.bat文件，最下面加如下语句：MOUNT C D:\Debug（debug.exe存放路径） 换行  C: 换行 debug</p>
+</li>
+<li><p>测试，启动DOSBox.exe，在光标处输入dds：0</p>
+<p>​    常用功能：</p>
+</li>
+<li><p>R 查看、改变CPU寄存器的内容：</p>
+<p>r、r 寄存器。</p>
+</li>
+<li><p>D 查看内存中的内容：</p>
+<p>d 段地址：偏移地址。</p>
+<p>左边每行的起始地址、中间是128个内存单元的内容、右边是每个内存单元中数据对应可显示的ASCII字符（没有就是‘ .’）。</p>
+</li>
+<li><p>E 改写内存中的内容：</p>
+<p>e 起始地址 数据 数据 数据 …</p>
+<p>e 地址，按enter后 输入新数据、按空格下一个，enter结束。</p>
+<p>可以输入字符、字符串，字符串输入后结果跟连续输入字符效果一样。</p>
+</li>
+<li><p>U 将内存中的机器指令翻译成汇编指令：</p>
+<p>u 地址。</p>
+<p>显示的每列为地址、机器指令、机器指令对应的汇编指令。</p>
+</li>
+<li><p>T 执行一条机器指令：</p>
+<p>t 再按enter，就执行了CS:IP所指向的那条指令，CS:IP指向下条指令。</p>
+</li>
+<li><p>A 以汇编指令的格式在内存中写入一条机器指令：</p>
+<p>a 地址 按enter，输入指令，再按enter。</p>
+</li>
+</ol>
+<h2 id="3-寄存器（内存访问）"><a href="#3-寄存器（内存访问）" class="headerlink" title="3.寄存器（内存访问）"></a>3.寄存器（内存访问）</h2><h3 id="内存中字的存储"><a href="#内存中字的存储" class="headerlink" title="内存中字的存储"></a>内存中字的存储</h3><p>​        字单元，即一个存放字型数据（16位）的内存单元，由两个地址连续的内存单元组成。高地址内存单元存放字型数据的高位字节，低位地址存放字的低位字节。</p>
+<p>​        起始地址为N的字单元简称为N地址字单元。</p>
+<h3 id="DS和-address"><a href="#DS和-address" class="headerlink" title="DS和[address]"></a>DS和[address]</h3><p>​        段寄存器DS，通常存放CPU将要访问数据的段地址。</p>
+<p>mov bx,1000H<br>mov ds,bx<br>mov al,[0]</p>
+<p>​        三条指令将10000H（1000：0）中的数据读到al中。</p>
+<p>​        mov，将数据直接送入寄存器，或将一个寄存器的内容送入另一个寄存器，或将内存单元中内容送入一个寄存器。</p>
+<p>​        […]表示一个内存单元，[…]中的0表示内存单元的偏移地址。</p>
+<p>​        指令执行时，8086CPU自动取ds中的数据为内存单元的段地址。</p>
+<p>​        8086CPU不支持将数据直接送入段寄存器ds（硬件设计问题），需要一个寄存器来中转。</p>
+<h3 id="字的传送"><a href="#字的传送" class="headerlink" title="字的传送"></a>字的传送</h3><p>​        8086CPU是16位结构，有16根数据线，可一次性传输16位的数据。</p>
+<p>​        只要在mov指令中给出16位的寄存器就可进行16位的数据传送了。</p>
+<p>mov bx,1000H<br>mov ds,bx<br>mov ax,[0]     ;1000:0处的字型数据送入ax<br>mov [0],cx   ;cx中16位数据送到1000：0处</p>
+<h3 id="mov、add、sub指令"><a href="#mov、add、sub指令" class="headerlink" title="mov、add、sub指令"></a>mov、add、sub指令</h3><p>mov：</p>
+<ol>
+<li><p>寄存器，数据</p>
+</li>
+<li><p>寄存器，寄存器</p>
+</li>
+<li><p>寄存器，内存单元</p>
+</li>
+<li><p>内存单元，寄存器</p>
+</li>
+<li><p>段寄存器除了不能直接mov数据进去，其他和寄存器一样</p>
+</li>
+</ol>
+<p>add、sub：</p>
+<ol>
+<li>寄存器，数据</li>
+<li>寄存器，寄存器</li>
+<li>寄存器，内存单元</li>
+<li>内存单元，寄存器</li>
+<li>不能对段寄存器进行运算操作</li>
+</ol>
+<h3 id="数据段"><a href="#数据段" class="headerlink" title="数据段"></a>数据段</h3><p>​        将长度为N(N&lt;=64KB)、地址连续、起始地址为16的倍数的内存单元当作专门存储数据的空间，从而定义了一个数据段。</p>
+<p>​        要访问段中的数据，先用ds存放数据段的段地址，再根据需要使用[…]访问数据段中具体的单元。</p>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>​        一种具有特殊访问方式的存储空间，LIFO。</p>
+<p>​        入栈、出栈。</p>
+<h3 id="CPU提供的栈机制"><a href="#CPU提供的栈机制" class="headerlink" title="CPU提供的栈机制"></a>CPU提供的栈机制</h3><p>​        8086CPU提供相关指令来以栈的方式访问内存空间，即可以将一段内存当作栈来使用。</p>
+<p>​        PUSH（入栈）push ax 表示将ax中数据入栈，POP（出栈）pop ax 表示从栈顶去除数据送入ax。</p>
+<p>​        8086CPU的push和pop操作都是以字为单位进行的。</p>
+<p>​        栈顶的段地址存放在SS段寄存器中，偏移地址存放在SP寄存器中，任意时刻，SS:SP指向栈顶元素。</p>
+<p>​        入栈时栈顶从高地址向低地址方向增长。</p>
+<p>​        push ax的执行：</p>
+<ol>
+<li>SP=SP-2，以当前栈顶前面的单元作为新的栈顶</li>
+<li>将ax中的内容送入SS:SP指向的内存单元</li>
+</ol>
+<p>​        pop ax的执行：</p>
+<ol>
+<li>将SS:SP指向的内存单元处的数据送入ax</li>
+<li>SP=SP+2，以当前栈顶下面的单元作为新的栈顶</li>
+<li>前一个栈顶元素没有删除，只是不在栈中，执行push之后会被覆盖</li>
+</ol>
+<h3 id="栈顶超界问题"><a href="#栈顶超界问题" class="headerlink" title="栈顶超界问题"></a>栈顶超界问题</h3><p>​        栈满时继续push，或栈空时继续pop，会发生栈顶超界。</p>
+<p>​        8086CPU只知道栈顶在何处，而不知道安排的栈空间有多大，不保证不会超界，需要自己管理。</p>
+<h3 id="push、pop指令"><a href="#push、pop指令" class="headerlink" title="push、pop指令"></a>push、pop指令</h3><p>​        push 寄存器、pop 寄存器。</p>
+<p>​        push 段寄存器、pop段寄存器。</p>
+<p>​        push 内存单元、pop 内存单元。</p>
+<h3 id="栈段"><a href="#栈段" class="headerlink" title="栈段"></a>栈段</h3><p>​        将长度为N(N&lt;=64KB)(FFFF)的一组地址连续、起始地址为16的倍数的内存单元，当作栈空间来用，从而定义了一个栈段。</p>
+</div><div class="tags"><a href="/tags/%E6%B1%87%E7%BC%96/"><i class="fa fa-tag"></i>汇编</a></div><div class="post-nav"><a class="next" href="/2021/06/29/my-first-blog/">my first blog</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://yohoop.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%8E%8B%E7%88%BD/">汇编语言(王爽)</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B/">测试一下</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/%E6%B1%87%E7%BC%96/" style="font-size: 15px;">汇编</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/06/30/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%8E%8B%E7%88%BD-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">汇编语言(王爽)读书笔记——1、2、3章</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/29/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/29/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2021 <a href="/." rel="nofollow">YOHOOP.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
